@@ -1,13 +1,14 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import type { User } from '../model/user'
+import { API_URL } from '../utils/Constans'
 
 export const authApi = createApi({
   reducerPath: 'authApi', 
-  baseQuery: fetchBaseQuery({ baseUrl: 'https://dummyjson.com/auth/' }),
+  baseQuery: fetchBaseQuery({ baseUrl: `${API_URL}` }),
   endpoints: (build) => ({
     postAuth: build.mutation<User, {username:string,password:string}>({
       query: (credentials) => ({
-        url: `login`,
+        url: `/auth/login`,
         method: 'POST',
         body: credentials,
       }),

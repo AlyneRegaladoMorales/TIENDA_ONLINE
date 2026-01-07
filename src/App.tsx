@@ -3,7 +3,7 @@ const App = () => {
   return (
     <main>
      
-       
+       Holi holi
 
     </main>
   );
